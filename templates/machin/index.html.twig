@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Machin index{% endblock %}
+
+{% block body %}
+    <h1>Machin index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for machin in machins %}
+            <tr>
+                <td>{{ machin.id }}</td>
+                <td>{{ machin.name }}</td>
+                <td>{{ machin.description }}</td>
+                <td>
+                    <a href="{{ path('app_machin_show', {'id': machin.id}) }}">show</a>
+                    <a href="{{ path('app_machin_edit', {'id': machin.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_machin_new') }}">Create new</a>
+{% endblock %}

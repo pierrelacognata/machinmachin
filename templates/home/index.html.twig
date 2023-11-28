@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<h3>premiere page</h3>
+    <a href="{{ path('app_home_bidule') }}" class="btn btn-primary">lien vers l'autre truc</a>
+    <a class="btn btn-success" href="{{ path('app_home_bidule') }}" class="btn btn-primary">lien vers les machins</a>
+    <img src="img.png" alt="">
+{% endblock %}
